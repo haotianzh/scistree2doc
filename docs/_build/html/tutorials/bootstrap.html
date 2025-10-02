@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -401,7 +401,7 @@ We can use Felsenstein’s bootstrapping method to determine the tree’s branch
 </div>
 </div>
 </div>
-<p>Bootstrapping on the inferred tree.</p>
+<p>Bootstrapping on the inferred tree (100 times).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">caller</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">num_bootstrap</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
@@ -410,7 +410,7 @@ We can use Felsenstein’s bootstrapping method to determine the tree’s branch
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(((cell1:1.0,cell3:1.0):0.97,(cell2:1.0,cell4:1.0):0.59):0.0,cell5:1.0):1.0;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(((cell1:1.0,cell3:1.0):0.99,(cell2:1.0,cell4:1.0):0.59):0.0,cell5:1.0):1.0;
 </pre></div>
 </div>
 </div>
@@ -427,7 +427,7 @@ We can use Felsenstein’s bootstrapping method to determine the tree’s branch
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b92afdfd90648c151687ce856a259a9132c0721d774046f08369b5bef18154f.png" src="../_images/0b92afdfd90648c151687ce856a259a9132c0721d774046f08369b5bef18154f.png" />
+<img alt="../_images/c466cd6ffed063ce98d54d43290b11e8cf5909f3ff07ba7eb3c5108ffc75b5cc.png" src="../_images/c466cd6ffed063ce98d54d43290b11e8cf5909f3ff07ba7eb3c5108ffc75b5cc.png" />
 </div>
 </div>
 </section>
@@ -452,7 +452,7 @@ We can use Felsenstein’s bootstrapping method to determine the tree’s branch
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((((((((((((cell24:1.0,cell43:1.0):0.62,cell22:1.0):0.2,cell39:1.0):0.1,((cell15:1.0,cell46:1.0):0.12,cell40:1.0):0.06):0.08,((((cell49:1.0,cell5:1.0):0.18,cell28:1.0):0.22,cell3:1.0):0.17,(cell32:1.0,cell4:1.0):0.47):0.0):0.0,cell19:1.0):0.0,cell8:1.0):0.0,((((cell13:1.0,cell38:1.0):0.56,cell21:1.0):0.34,cell20:1.0):0.29,cell42:1.0):0.47):0.02,(((cell31:1.0,cell41:1.0):0.4,cell25:1.0):0.21,cell23:1.0):0.33):0.1,cell44:1.0):0.34,cell29:1.0):1.0,(((((((((cell16:1.0,cell17:1.0):0.16,(cell27:1.0,cell2:1.0):0.17):0.05,cell30:1.0):0.08,cell11:1.0):0.18,((cell14:1.0,cell26:1.0):0.42,cell47:1.0):0.26):0.3,cell48:1.0):0.15,((((cell36:1.0,cell9:1.0):0.36,cell1:1.0):0.14,cell6:1.0):0.1,((cell0:1.0,cell34:1.0):0.56,(cell33:1.0,cell45:1.0):0.53):0.38):0.03):0.0,((((cell10:1.0,cell12:1.0):0.56,cell37:1.0):0.78,cell35:1.0):0.55,cell18:1.0):0.6):0.29,cell7:1.0):1.0):1.0;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((((((((((((cell24:1.0,cell43:1.0):0.62,cell22:1.0):0.22,cell39:1.0):0.06,((cell15:1.0,cell46:1.0):0.08,cell40:1.0):0.09):0.09,((((cell49:1.0,cell5:1.0):0.16,cell28:1.0):0.19,cell3:1.0):0.15,(cell32:1.0,cell4:1.0):0.39):0.0):0.0,cell19:1.0):0.0,cell8:1.0):0.0,((((cell13:1.0,cell38:1.0):0.57,cell21:1.0):0.32,cell20:1.0):0.19,cell42:1.0):0.36):0.03,(((cell31:1.0,cell41:1.0):0.36,cell25:1.0):0.16,cell23:1.0):0.22):0.09,cell44:1.0):0.44,cell29:1.0):0.97,(((((((((cell16:1.0,cell17:1.0):0.16,(cell27:1.0,cell2:1.0):0.11):0.13,cell30:1.0):0.09,cell11:1.0):0.17,((cell14:1.0,cell26:1.0):0.51,cell47:1.0):0.31):0.27,cell48:1.0):0.16,((((cell36:1.0,cell9:1.0):0.41,cell1:1.0):0.09,cell6:1.0):0.05,((cell0:1.0,cell34:1.0):0.51,(cell33:1.0,cell45:1.0):0.46):0.38):0.0):0.0,((((cell10:1.0,cell12:1.0):0.58,cell37:1.0):0.79,cell35:1.0):0.53,cell18:1.0):0.51):0.27,cell7:1.0):1.0):1.0;
 </pre></div>
 </div>
 </div>
@@ -471,7 +471,7 @@ We can use Felsenstein’s bootstrapping method to determine the tree’s branch
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0bef121060f40ed01bcac34519086d6dfab94cae9d5608e3010b5e0f971a664d.png" src="../_images/0bef121060f40ed01bcac34519086d6dfab94cae9d5608e3010b5e0f971a664d.png" />
+<img alt="../_images/017520eebb9e397a63f047372de44a886edc841fee60af859cd8edcee074d81f.png" src="../_images/017520eebb9e397a63f047372de44a886edc841fee60af859cd8edcee074d81f.png" />
 </div>
 </div>
 </section>

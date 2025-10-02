@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -452,7 +452,7 @@ Likelihood of the SPR tree:  -6.271255186813891
 <p>We can also replace <strong>SPR</strong> (Subtree Prune and Regraft) local search with <strong>NNI</strong> (Nearest Neighbor Interchange) by setting <code class="docutils literal notranslate"><span class="pre">nni=True</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Using <strong>NNI</strong> typically <strong>speeds up the algorithm</strong> but may result in <strong>lower accuracy</strong> compared to <strong>SPR</strong>. NNI is recommended when a faster approximation is needed, especially for <strong>large datasets</strong>.</p>
+<p>Using NNI typically speeds up the algorithm, but may result in lower accuracy compared to SPR. NNI is recommended when a faster approximation is needed, especially for large datasets.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -482,7 +482,7 @@ Likelihood of the NNI tree:  -6.271255186813891
 <p>We may also invoke <strong>ScisTree2</strong> with <strong>Neighbor Joining (NJ)</strong> by setting <code class="docutils literal notranslate"><span class="pre">nj=True</span></code> to obtain <strong>only the initial tree</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this toy example, <strong>Neighbor Joining</strong> performs quite well and produces a tree close to the optimal.</p>
+<p>In this toy example, Neighbor Joining performs quite well and produces a tree close to the optimal.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,9 +509,12 @@ Likelihood of the NJ tree:  -6.271255186813891
 </div>
 </div>
 </div>
-<p>We can also <strong>evaluate a random or alternative tree</strong> using the genotype probability matrix.<br />
+<p>We can also evaluate a random or alternative tree using the genotype probability matrix.<br />
 Using the same example as before, we evaluate a random tree structure.</p>
-<p>As expected, the <strong>likelihood</strong> of this alternative tree is <strong>lower</strong> than that of the optimal tree (−6.27).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As expected, the likelihood of this alternative tree is lower than that of the optimal tree (−6.27).</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_tree</span> <span class="o">=</span> <span class="s1">&#39;(((cell2,cell3),(cell5,cell1)),cell4);&#39;</span>

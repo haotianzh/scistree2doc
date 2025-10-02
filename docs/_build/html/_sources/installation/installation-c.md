@@ -9,4 +9,6 @@ make
 # You can then test it directly, e.g., ./scistree example_input.txt
 ```
 
+```{note}
 This step is not required for the Python package installation if using `pip install .` as described above.
+```
