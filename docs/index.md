@@ -48,7 +48,7 @@ ScisTree2 is a fast and accurate method for cell lineage tree inference and geno
 
 This figure illustrates an example of noisy genotypes for 5 cells across 4 SNV sites. Each value represents the probability of a site being wild-type (0). After running ScisTree2, a cell lineage tree is inferred, and mutations are mapped onto its branches. 
 ```{note}
-As shown, the genotype of cell $C_3$ at site $S_1$ is noisy, it has only a 10% probability of being wild-type (0), but is very likely to be mutant (1) as the inferred tree indicates. Mutation of $S_1$ is placed on the branch to the lowest common ancestor of $C_1$, $C_2$, and $C_3$, so all of them have 1 at $S_1$.
+As shown, the genotype of cell $C_1$ at site $S_1$ is noisy, it has a 70% probability of being wild-type (0) from our input, but is very likely to be mutant (1) as the inferred tree indicates. Mutation of $S_1$ is placed on the branch to the lowest common ancestor of $C_1$, $C_2$, and $C_3$, so all of them will have 1 at $S_1$.
 ```
 #### Algorithm overview
 ScisTree2 uses a heurastic way to find the optimal tree: 
