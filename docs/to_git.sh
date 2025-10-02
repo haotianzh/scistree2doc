@@ -2,7 +2,7 @@
 
 conda activate scistree2
 
-jupyter-book build .
+/home/haz19024/miniconda3/envs/scistree2/bin/jupyter-book build .
 
 cd ../scistree2doc
 cp -r ../docs .
