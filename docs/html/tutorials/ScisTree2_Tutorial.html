@@ -1,0 +1,1312 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ScisTree2 Tutorial &#8212; ScisTree2 Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/ScisTree2_Tutorial';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="ScisTree2 Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="ScisTree2 Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    About
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation-py.html">Install for Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation-c.html">Install for C++ (optional)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Prepare your own data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branch_length.html">Map mutations on branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html">Get branch support using bootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluation.html">Evaluate the inferred tree</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Using ScisTree2 in C++</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Release Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/yufengwudcs/ScisTree2" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/ScisTree2_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ScisTree2 Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-required-packages"><strong>Importing Required Packages</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-providing-genotype-probability-for-scistree2">Inputs: Providing Genotype Probability for ScisTree2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-direct-probability-specification">Method 1: Direct Probability Specification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-read-counts">Method 2: From Read Counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-from-csv-file">Method 1: From CSV File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-from-vcf-file">Method 3: From VCF File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-i-toy-genotype-probability-matrix">🧬<strong>Example I: Toy Genotype Probability Matrix</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-ii-toy-raw-reads-data">🧬 <strong>Example II: Toy Raw Reads Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-metrics">Evaluation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-iii-from-vcf-file-reads">🧬 <strong>Example III: From VCF File (reads)</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="scistree2-tutorial">
+<h1>ScisTree2 Tutorial<a class="headerlink" href="#scistree2-tutorial" title="Link to this heading">#</a></h1>
+<p>This tutorial includes three examples to help you get started with <strong>ScisTree2</strong>:</p>
+<ul class="simple">
+<li><p><strong>Example I</strong>: Running ScisTree2 with your own <strong>probabilistic genotype matrix</strong> (with csv support).</p></li>
+<li><p><strong>Example II</strong>: Running ScisTree2 with <strong>raw read data</strong> as input (with csv support).</p></li>
+<li><p><strong>Example III</strong>: Running ScisTree2 with <strong>VCF</strong> as input.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="importing-required-packages">
+<h2><strong>Importing Required Packages</strong><a class="headerlink" href="#importing-required-packages" title="Link to this heading">#</a></h2>
+<p>Before running ScisTree2, make sure to import the required libraries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scistree2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">s2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phytreeviz</span><span class="w"> </span><span class="kn">import</span> <span class="n">TreeViz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inputs-providing-genotype-probability-for-scistree2">
+<h2>Inputs: Providing Genotype Probability for ScisTree2<a class="headerlink" href="#inputs-providing-genotype-probability-for-scistree2" title="Link to this heading">#</a></h2>
+<p>ScisTree2 works with genotype probability data, which it accepts as a <code class="docutils literal notranslate"><span class="pre">scistree.probability.GenotypeProbability</span></code> object. You have several convenient methods to construct this essential object, each catering to different input data formats.</p>
+<hr class="docutils" />
+<section id="method-1-direct-probability-specification">
+<h3>Method 1: Direct Probability Specification<a class="headerlink" href="#method-1-direct-probability-specification" title="Link to this heading">#</a></h3>
+<p>If you’ve already calculated your genotype probabilities, you can input them directly using the <code class="docutils literal notranslate"><span class="pre">from_probs</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scistree</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_probs</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">cell_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">probs</span></code></strong>: A NumPy array containing the genotype probabilities.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_names</span></code> (Optional)</strong>: A list of names for your cells. If you don’t provide this, cells will be automatically named <code class="docutils literal notranslate"><span class="pre">c1</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">cN</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">site_names</span></code> (Optional)</strong>: A list of names for your genomic sites. If not provided, sites will be named <code class="docutils literal notranslate"><span class="pre">s1</span></code>, <code class="docutils literal notranslate"><span class="pre">s2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">sN</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">margin</span></code></strong>: This parameter helps prevent probabilities from becoming either extremely large or extremely small, ensuring numerical stability.</p></li>
+</ul>
+<p><strong>When to use this:</strong> This method is ideal when you have precise genotype probabilities readily available, perhaps from another analysis pipeline or a simulation.</p>
+</section>
+<section id="method-2-from-read-counts">
+<h3>Method 2: From Read Counts<a class="headerlink" href="#method-2-from-read-counts" title="Link to this heading">#</a></h3>
+<p>For raw read count data, ScisTree2 can automatically convert these into genotype probabilities. This method includes crucial parameters to account for common experimental noise in sequencing data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scistree</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_reads</span><span class="p">(</span><span class="n">reads</span><span class="p">,</span> <span class="n">ado</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seqerr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">posterior</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cell_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site_names</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">reads</span></code></strong>: A three-dimensional NumPy array containing the read counts for each cell at each site.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ado</span></code></strong>: The Allele Dropout (ADO) rate, which accounts for the probability of an allele not being detected in a cell.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">seqerr</span></code></strong>: The sequencing error rate, representing the probability of a base being incorrectly called during sequencing.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">posterior</span></code></strong>: If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, ScisTree2 will use <code class="docutils literal notranslate"><span class="pre">af</span></code> to calculate the posterior genotype probability. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">af</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">af</span></code></strong>: The allele frequency.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_names</span></code> (Optional)</strong>: A list of names for your cells. If you don’t provide this, cells will be automatically named <code class="docutils literal notranslate"><span class="pre">c1</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">cN</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">site_names</span></code> (Optional)</strong>: A list of names for your genomic sites. If not provided, sites will be named <code class="docutils literal notranslate"><span class="pre">s1</span></code>, <code class="docutils literal notranslate"><span class="pre">s2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">sN</span></code>.</p></li>
+</ul>
+<p><strong>When to use this:</strong> This is your go-to method when you have sequencing read depth information and need to infer genotype probabilities while accounting for common single-cell sequencing artifacts.</p>
+</section>
+<section id="method-1-from-csv-file">
+<h3>Method 1: From CSV File<a class="headerlink" href="#method-1-from-csv-file" title="Link to this heading">#</a></h3>
+<p>If you’ve already had a csv file containing probabilites or reads information, you can input it directly using the <code class="docutils literal notranslate"><span class="pre">from_csv</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scistree</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="n">csv_filepath</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;probability&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">csv_path</span></code></strong>: The path to your CSV file.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">source</span></code></strong>: Be either “probability” or “read”.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">kwargs</span></code></strong>: Other parameters, such as <code class="docutils literal notranslate"><span class="pre">ado</span></code>, <code class="docutils literal notranslate"><span class="pre">seqerr</span></code>, etc.</p></li>
+</ul>
+</section>
+<section id="method-3-from-vcf-file">
+<h3>Method 3: From VCF File<a class="headerlink" href="#method-3-from-vcf-file" title="Link to this heading">#</a></h3>
+<p>ScisTree2 also supports direct input from Variant Call Format (VCF) files, a common format for storing genetic variation data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scistree</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_vcf</span><span class="p">(</span><span class="n">vcf_path</span><span class="p">,</span> <span class="n">ado</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seqerr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">posterior</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;AD&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">vcf_path</span></code></strong>: The path to your VCF file.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ado</span></code></strong>: The Allele Dropout (ADO) rate, which accounts for the probability of an allele not being detected in a cell.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">seqerr</span></code></strong>: The sequencing error rate, representing the probability of a base being incorrectly called during sequencing.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">posterior</span></code></strong>: If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, ScisTree2 will use <code class="docutils literal notranslate"><span class="pre">af</span></code> to calculate the posterior genotype probability. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">af</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">af</span></code></strong>: The allele frequency.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">key</span></code></strong>: This is the specific tag within the VCF file that stores the read depth information.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="example-i-toy-genotype-probability-matrix">
+<h3>🧬<strong>Example I: Toy Genotype Probability Matrix</strong><a class="headerlink" href="#example-i-toy-genotype-probability-matrix" title="Link to this heading">#</a></h3>
+<p>In this example, we provide a small toy dataset where rows represent SNPs and columns represent cells.<br />
+Each entry in the matrix denotes the probability of being the <strong>wild type</strong> (reference).</p>
+<p>This format is suitable when you already have probabilistic genotypes derived from upstream processing.</p>
+<p>*use 0.5 if you are uncertain.</p>
+<p>We invoke <strong>ScisTree2</strong> with <strong>SPR (Subtree Prune and Regraft)</strong> local search on a small toy dataset consisting of 5 cells and 6 SNPs.</p>
+<ul class="simple">
+<li><p><strong>Rows</strong> represent <strong>SNPs</strong></p></li>
+<li><p><strong>Columns</strong> represent <strong>cells</strong></p></li>
+<li><p>Each entry contains the <strong>probability of being wild type</strong> (i.e., the reference allele)</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>cell1</p></th>
+<th class="head text-center"><p>cell2</p></th>
+<th class="head text-center"><p>cell3</p></th>
+<th class="head text-center"><p>cell4</p></th>
+<th class="head text-center"><p>cell5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>snp1</strong></p></td>
+<td class="text-center"><p>0.01</p></td>
+<td class="text-center"><p>0.60</p></td>
+<td class="text-center"><p>0.08</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.70</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>snp2</strong></p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.70</p></td>
+<td class="text-center"><p>0.01</p></td>
+<td class="text-center"><p>0.30</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>snp3</strong></p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.90</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>snp4</strong></p></td>
+<td class="text-center"><p>0.90</p></td>
+<td class="text-center"><p>0.90</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.02</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>snp5</strong></p></td>
+<td class="text-center"><p>0.01</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.01</p></td>
+<td class="text-center"><p>0.80</p></td>
+<td class="text-center"><p>0.90</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>snp6</strong></p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p>0.02</p></td>
+<td class="text-center"><p>0.70</p></td>
+<td class="text-center"><p>0.05</p></td>
+<td class="text-center"><p>0.90</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one can generate the input directly from the probability matrix.</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+                 <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]])</span> 
+<span class="n">cell_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cell1&#39;</span><span class="p">,</span> <span class="s1">&#39;cell2&#39;</span><span class="p">,</span> <span class="s1">&#39;cell3&#39;</span><span class="p">,</span> <span class="s1">&#39;cell4&#39;</span><span class="p">,</span> <span class="s1">&#39;cell5&#39;</span><span class="p">]</span>
+<span class="n">site_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;snp1&#39;</span><span class="p">,</span> <span class="s1">&#39;snp2&#39;</span><span class="p">,</span> <span class="s1">&#39;snp3&#39;</span><span class="p">,</span> <span class="s1">&#39;snp4&#39;</span><span class="p">,</span> <span class="s1">&#39;snp5&#39;</span><span class="p">,</span> <span class="s1">&#39;snp6&#39;</span><span class="p">]</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_probs</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">cell_names</span><span class="p">,</span> <span class="n">site_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      cell1  cell2  cell3  cell4  cell5
+snp1   0.01   0.60   0.08   0.80   0.70
+snp2   0.80   0.02   0.70   0.01   0.30
+snp3   0.02   0.80   0.02   0.80   0.90
+snp4   0.90   0.90   0.80   0.80   0.02
+snp5   0.01   0.80   0.01   0.80   0.90
+snp6   0.05   0.02   0.70   0.05   0.90
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, simply from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file. (if you have it)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># or get it from a .csv file</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="s1">&#39;./data/toy_probs.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      cell1  cell2  cell3  cell4  cell5
+snp1   0.01   0.60   0.08   0.80   0.70
+snp2   0.80   0.02   0.70   0.01   0.30
+snp3   0.02   0.80   0.02   0.80   0.90
+snp4   0.90   0.90   0.80   0.80   0.02
+snp5   0.01   0.80   0.01   0.80   0.90
+snp6   0.05   0.02   0.70   0.05   0.90
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we initialize a <strong>ScisTree2</strong> caller with <strong>SPR local search</strong> enabled and set the number of threads to 8.</p>
+<p>After calling the <code class="docutils literal notranslate"><span class="pre">infer</span></code> method, ScisTree2 returns:</p>
+<ul class="simple">
+<li><p>The <strong>inferred tree</strong></p></li>
+<li><p>The <strong>imputed genotype</strong> (pandas.DataFrame)</p></li>
+<li><p>The corresponding <strong>log-likelihood</strong> of the tree</p></li>
+</ul>
+<p>To obtain the Newick string, you can either use <code class="docutils literal notranslate"><span class="pre">print(tree)</span></code> or <code class="docutils literal notranslate"><span class="pre">tree.output()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caller</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># use 8 threads</span>
+<span class="n">tree</span><span class="p">,</span> <span class="n">imputed_genotype</span><span class="p">,</span> <span class="n">likelihood</span> <span class="o">=</span> <span class="n">caller</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span> <span class="c1"># run Scistree2 inference</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imputed genotype from SPR: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">imputed_genotype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of the SPR tree: &#39;</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Likelihood of the SPR tree: &#39;</span><span class="p">,</span> <span class="n">likelihood</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputed genotype from SPR: 
+       cell1  cell2  cell3  cell4  cell5
+snp1      1      0      1      0      0
+snp2      0      1      0      1      0
+snp3      1      0      1      0      0
+snp4      0      0      0      0      1
+snp5      1      0      1      0      0
+snp6      1      1      1      1      0
+Newick of the SPR tree:  (((cell1,cell3),(cell2,cell4)),cell5);
+Likelihood of the SPR tree:  -6.271255186813891
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also replace <strong>SPR</strong> (Subtree Prune and Regraft) local search with <strong>NNI</strong> (Nearest Neighbor Interchange) by setting <code class="docutils literal notranslate"><span class="pre">nni=True</span></code>.</p>
+<blockquote>
+<div><p>ℹ️<strong>Note:</strong> Using <strong>NNI</strong> typically <strong>speeds up the algorithm</strong> but may result in <strong>lower accuracy</strong> compared to <strong>SPR</strong>. NNI is recommended when a faster approximation is needed, especially for <strong>large datasets</strong>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caller_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">nni</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tree_nni</span><span class="p">,</span> <span class="n">imputed_genotype_nni</span><span class="p">,</span> <span class="n">likelihood_nni</span> <span class="o">=</span> <span class="n">caller_nni</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imputed genotype from NNI: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">imputed_genotype_nni</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of the NNI tree: &#39;</span><span class="p">,</span> <span class="n">tree_nni</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Likelihood of the NNI tree: &#39;</span><span class="p">,</span> <span class="n">likelihood_nni</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputed genotype from NNI: 
+       cell1  cell2  cell3  cell4  cell5
+snp1      1      0      1      0      0
+snp2      0      1      0      1      0
+snp3      1      0      1      0      0
+snp4      0      0      0      0      1
+snp5      1      0      1      0      0
+snp6      1      1      1      1      0
+Newick of the NNI tree:  (((cell1,cell3),(cell2,cell4)),cell5);
+Likelihood of the NNI tree:  -6.271255186813891
+</pre></div>
+</div>
+</div>
+</div>
+<p>We may also invoke <strong>ScisTree2</strong> with <strong>Neighbor Joining (NJ)</strong> by setting <code class="docutils literal notranslate"><span class="pre">nj=True</span></code> to obtain <strong>only the initial tree</strong>.</p>
+<blockquote>
+<div><p>ℹ️<strong>Note:</strong> In this toy example, <strong>Neighbor Joining</strong> performs quite well and produces a tree close to the optimal.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caller_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">nj</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tree_nj</span><span class="p">,</span> <span class="n">imputed_genotype_nj</span><span class="p">,</span> <span class="n">likelihood_nj</span> <span class="o">=</span> <span class="n">caller_nj</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imputed genotype from NJ: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">imputed_genotype_nj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of the NJ tree: &#39;</span><span class="p">,</span> <span class="n">tree_nj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Likelihood of the NJ tree: &#39;</span><span class="p">,</span> <span class="n">likelihood_nj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputed genotype from NJ: 
+       cell1  cell2  cell3  cell4  cell5
+snp1      1      0      1      0      0
+snp2      0      1      0      1      0
+snp3      1      0      1      0      0
+snp4      0      0      0      0      1
+snp5      1      0      1      0      0
+snp6      1      1      1      1      0
+Newick of the NJ tree:  (((cell1,cell3),(cell2,cell4)),cell5);
+Likelihood of the NJ tree:  -6.271255186813891
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also <strong>evaluate a random or alternative tree</strong> using the genotype probability matrix.<br />
+Using the same example as before, we evaluate a random tree structure.</p>
+<p>As expected, the <strong>likelihood</strong> of this alternative tree is <strong>lower</strong> than that of the optimal tree (−6.27).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_tree</span> <span class="o">=</span> <span class="s1">&#39;(((cell2,cell3),(cell5,cell1)),cell4);&#39;</span>
+<span class="n">imputed_genotype_random</span><span class="p">,</span> <span class="n">likelihood_random</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">random_tree</span><span class="p">)</span>
+<span class="c1"># imputed_genotype_random, likelihood_random, tree = s2.evaluate(gp, random_tree, return_tree=True) # or return a tree</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imputed genotype from SPR: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">imputed_genotype_random</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of the random tree: &#39;</span><span class="p">,</span> <span class="n">random_tree</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Likelihood of the random tree: &#39;</span><span class="p">,</span> <span class="n">likelihood_random</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputed genotype from SPR: 
+       cell1  cell2  cell3  cell4  cell5
+snp1      1      1      1      0      1
+snp2      1      1      1      1      1
+snp3      1      1      1      0      1
+snp4      0      0      0      0      1
+snp5      1      1      1      0      1
+snp6      1      1      1      1      1
+Newick of the random tree:  (((cell2,cell3),(cell5,cell1)),cell4);
+Likelihood of the random tree:  -18.274574970677588
+</pre></div>
+</div>
+</div>
+</div>
+<p>ScisTree2 also provides functionality for <strong>tree visualization</strong>.</p>
+<blockquote>
+<div><p>ℹ️<strong>Note:</strong> ScisTree2 includes built-in support for visualizing <strong>moderate-size</strong> trees. For <strong>very large trees</strong>, it is recommended to use specialized external tools such as FigTree, iTOL, or ETE Toolkit.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           ┌cell5
+ 3bd0a12cb9┤
+           │                     ┌cell4
+           │          ┌6e2a2b0cd1┤
+           │          │          └cell2
+           └3a33d38690┤
+                      │          ┌cell3
+                      └7781bfd0c6┤
+                                 └cell1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one can also plot the tree using `phytreeviz`</span>
+<span class="n">tv</span> <span class="o">=</span> <span class="n">TreeViz</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">output</span><span class="p">())</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">plotfig</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3f32b147e2a8ddc14061082d5f3214af1e3e96a950cf690e423023bf0f17e0b6.png" src="../_images/3f32b147e2a8ddc14061082d5f3214af1e3e96a950cf690e423023bf0f17e0b6.png" />
+</div>
+</div>
+<p>You can also find out where mutations are placed on the tree. The <code class="docutils literal notranslate"><span class="pre">node.mutations</span></code> attribute of a branch’s ending node provides the mutation profile for that branch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">get_all_nodes</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mutations at branch ending at </span><span class="si">{</span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">mutations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mutations at branch ending at cell5: [&#39;snp4&#39;]
+Mutations at branch ending at 3a33d38690: [&#39;snp6&#39;]
+Mutations at branch ending at 6e2a2b0cd1: [&#39;snp2&#39;]
+Mutations at branch ending at 7781bfd0c6: [&#39;snp1&#39;, &#39;snp3&#39;, &#39;snp5&#39;]
+Mutations at branch ending at cell4: []
+Mutations at branch ending at cell2: []
+Mutations at branch ending at cell3: []
+Mutations at branch ending at cell1: []
+Mutations at branch ending at 3bd0a12cb9: []
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can inject branch information into a Newick string by passing a custom function. This function extracts the desired data, such as the number of mutations, from each node and incorporates it into the string.</p>
+<p>This allows you to represent the number of mutations as the branch length. With this Newick string, you can easily perform further analysis or visualization using other packages, for example, libraries like ete3 are well-suited for this purpose, although we won’t cover that part here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_num_mutations</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">mutations</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="n">get_num_mutations</span><span class="p">))</span> <span class="c1"># Newick string format: branch lengths represent the number of mutations.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mutations</span><span class="p">)))</span> <span class="c1"># or simply, using a lambda expression.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(((cell1:0,cell3:0):3,(cell2:0,cell4:0):1):1,cell5:1):0;
+(((cell1:0,cell3:0):3,(cell2:0,cell4:0):1):1,cell5:1):0;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bootstrapping is the most common method for assessing branch support, applicable to distance-based, parsimony, and maximum likelihood trees. It’s a resampling technique that gauges how consistently the data supports each clade.
+We can use Felsenstein’s bootstrapping method to determine the tree’s branch confidence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">caller</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">gp</span><span class="p">,</span> <span class="n">num_bootstrap</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">branch_confidence</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(((cell1:1.0,cell3:1.0):0.97,(cell2:1.0,cell4:1.0):0.71):0.0,cell5:1.0):1.0;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tv</span> <span class="o">=</span> <span class="n">TreeViz</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mutations</span><span class="p">),</span> <span class="n">confidence_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">branch_confidence</span><span class="p">))</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">show_branch_length</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label_formatter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;#mut: </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">show_confidence</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label_formatter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;conf: </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">tv</span><span class="o">.</span><span class="n">show_scale_axis</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">plotfig</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06802d5a61cc29134f05c3b8e9a0b1e05435238f86c4b2a7f860341ecf1545cc.png" src="../_images/06802d5a61cc29134f05c3b8e9a0b1e05435238f86c4b2a7f860341ecf1545cc.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-ii-toy-raw-reads-data">
+<h3>🧬 <strong>Example II: Toy Raw Reads Data</strong><a class="headerlink" href="#example-ii-toy-raw-reads-data" title="Link to this heading">#</a></h3>
+<p>In this dataset, the input format remains a matrix of shape <code class="docutils literal notranslate"><span class="pre">(num_sites,</span> <span class="pre">num_cells)</span></code>.<br />
+However, instead of using <strong>precomputed genotype probabilities</strong>, <strong>each entry is a tuple</strong> representing raw sequencing read counts.</p>
+<p>*if the read counts are unknown, just use (0, 0).</p>
+<p>Each tuple has the form: <code class="docutils literal notranslate"><span class="pre">(ref_count,</span> <span class="pre">alt_count)</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref_count</span></code> is the number of reads supporting the <strong>reference (wild type)</strong> allele</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alt_count</span></code> is the number of reads supporting the <strong>mutation (alternative)</strong> allele</p></li>
+</ul>
+<p>This format is suitable when you start from <strong>raw read counts</strong> rather than inferred genotype probabilities, enabling ScisTree2 to perform <strong>probabilistic genotype modeling</strong> internally before tree inference.</p>
+<p>This dataset, located in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder, contains <strong>50 cells</strong> and <strong>100 SNPs</strong>.<br />
+It was generated using <a class="reference external" href="https://github.com/dapogon/cellcoal">CellCoal</a> with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cellcoal-1.2.0<span class="w"> </span>-n5<span class="w"> </span>-s10<span class="w"> </span>-l100<span class="w"> </span>-e1000<span class="w"> </span>-b1<span class="w"> </span>-j30<span class="w"> </span>-p0<span class="w"> </span>-D0.5<span class="w"> </span>-B0<span class="w"> </span><span class="m">0</span>.01<span class="w"> </span>-C5<span class="w"> </span>-E0<span class="w"> </span>-otoys<span class="w"> </span>-y3<span class="w"> </span>-v<span class="w"> </span>-1<span class="w"> </span>-2<span class="w"> </span>-6<span class="w"> </span>-7<span class="w"> </span>-9<span class="w"> </span>-Y
+</pre></div>
+</div>
+<p>Preview:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Cell 1</p></th>
+<th class="head"><p>Cell 2</p></th>
+<th class="head"><p>Cell 3</p></th>
+<th class="head"><p>Cell 4</p></th>
+<th class="head"><p>Cell 5</p></th>
+<th class="head"><p>Cell 6</p></th>
+<th class="head"><p>Cell 7</p></th>
+<th class="head"><p>Cell 8</p></th>
+<th class="head"><p>Cell 9</p></th>
+<th class="head"><p>Cell 10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SNP 1</p></td>
+<td><p>(4,1)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(5,1)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(1,0)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(6,0)</p></td>
+<td><p>(6,0)</p></td>
+<td><p>(5,0)</p></td>
+<td><p>(5,0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SNP 2</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(7,1)</p></td>
+<td><p>(1,1)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(2,0)</p></td>
+<td><p>(10,0)</p></td>
+<td><p>(11,0)</p></td>
+<td><p>(1,0)</p></td>
+<td><p>(9,0)</p></td>
+</tr>
+<tr class="row-even"><td><p>SNP 3</p></td>
+<td><p>(4,5)</p></td>
+<td><p>(11,0)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(7,0)</p></td>
+<td><p>(0,0)</p></td>
+<td><p>(2,0)</p></td>
+<td><p>(4,0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SNP 4</p></td>
+<td><p>(8,0)</p></td>
+<td><p>(2,0)</p></td>
+<td><p>(6,0)</p></td>
+<td><p>(1,0)</p></td>
+<td><p>(2,2)</p></td>
+<td><p>(3,5)</p></td>
+<td><p>(5,3)</p></td>
+<td><p>(1,3)</p></td>
+<td><p>(2,4)</p></td>
+<td><p>(8,0)</p></td>
+</tr>
+<tr class="row-even"><td><p>SNP 5</p></td>
+<td><p>(5,0)</p></td>
+<td><p>(9,0)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(3,0)</p></td>
+<td><p>(7,0)</p></td>
+<td><p>(4,1)</p></td>
+<td><p>(4,0)</p></td>
+<td><p>(5,0)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>ℹ️ <strong>Note</strong>: Only the first 10 cells and 5 SNPs are shown here for illustration. The full dataset contains 100 SNPs × 50 cells.</p>
+</div></blockquote>
+<blockquote>
+<div><p>ℹ️ <strong>Note</strong>: Use (0, 0) if there is any missing.</p>
+</div></blockquote>
+<p>We calculate the posterior genotype probability with the following settings:</p>
+<ul class="simple">
+<li><p>Allelic dropout rate: <code class="docutils literal notranslate"><span class="pre">ado=0.2</span></code></p></li>
+<li><p>Sequencing error rate: <code class="docutils literal notranslate"><span class="pre">seqerr=0.01</span></code></p></li>
+</ul>
+<p>When <code class="docutils literal notranslate"><span class="pre">posterior=True</span></code> (default), the posterior probability <span class="math notranslate nohighlight">\(p(G \mid D)\)</span> is calculated given the allele frequency <code class="docutils literal notranslate"><span class="pre">af</span></code>.<br />
+The parameter <code class="docutils literal notranslate"><span class="pre">af</span></code> should be a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> with shape (num_sites, 1).</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">af</span></code> is not provided or set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will be automatically estimated from the current samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one can generate the input directly from a reads matrix.</span>
+<span class="n">reads</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data/toy_raw_reads.npy&#39;</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># load simulated reads</span>
+<span class="n">cell_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;cell</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+<span class="n">site_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;snp</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_reads</span><span class="p">(</span><span class="n">reads</span><span class="p">,</span> <span class="n">ado</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seqerr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">posterior</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cell_names</span><span class="o">=</span><span class="n">cell_names</span><span class="p">,</span> <span class="n">site_names</span><span class="o">=</span><span class="n">site_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 50)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, simply from a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># or from a .csv file containing reads information by setting source = &#39;read&#39;.</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_csv</span><span class="p">(</span><span class="s1">&#39;./data/toy_raw_reads.csv&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then proceed to perform inference under three different modes as what we did in the first example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SPR local search</span>
+<span class="n">caller_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">tree_spr</span><span class="p">,</span> <span class="n">imputed_genotype_spr</span><span class="p">,</span> <span class="n">likelihood_spr</span> <span class="o">=</span> <span class="n">caller_spr</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="c1"># NNI local search</span>
+<span class="n">caller_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">nni</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">tree_nni</span><span class="p">,</span> <span class="n">imputed_genotype_nni</span><span class="p">,</span> <span class="n">likelihood_nni</span> <span class="o">=</span> <span class="n">caller_nni</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="c1"># NJ</span>
+<span class="n">caller_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">nj</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tree_nj</span><span class="p">,</span> <span class="n">imputed_genotype_nj</span><span class="p">,</span> <span class="n">likelihood_nj</span> <span class="o">=</span> <span class="n">caller_nj</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ScisTree2 operates on a heuristic algorithm, which means its execution time can vary. For users who need to control runtime and potentially stop the program early, the <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> parameter is available. By setting <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>, you can define the maximum number of local search steps performed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caller_early_stop</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tree_early_stop</span><span class="p">,</span> <span class="n">imputed_genotype_early_stop</span><span class="p">,</span> <span class="n">likelihood_early_stop</span> <span class="o">=</span> <span class="n">caller_early_stop</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;likelihood after 2 iterations:&#39;</span><span class="p">,</span> <span class="n">likelihood_early_stop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the optimal likelihood:&#39;</span><span class="p">,</span> <span class="n">likelihood_spr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>likelihood after 2 iterations: -1152.6682008798907
+the optimal likelihood: -1146.3643724474396
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluate branch confidence</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_spr_bootstrap</span> <span class="o">=</span> <span class="n">caller_spr</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">(</span><span class="n">tree_spr</span><span class="p">,</span> <span class="n">gp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree_spr_bootstrap</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">branch_confidence</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((((((((((((cell24:1.0,cell43:1.0):0.65,cell22:1.0):0.24,cell39:1.0):0.05,((cell15:1.0,cell46:1.0):0.09,cell40:1.0):0.04):0.13,((((cell49:1.0,cell5:1.0):0.12,cell28:1.0):0.14,cell3:1.0):0.09,(cell32:1.0,cell4:1.0):0.52):0.01):0.0,cell19:1.0):0.0,cell8:1.0):0.0,((((cell13:1.0,cell38:1.0):0.46,cell21:1.0):0.35,cell20:1.0):0.1,cell42:1.0):0.39):0.01,(((cell31:1.0,cell41:1.0):0.32,cell25:1.0):0.19,cell23:1.0):0.26):0.09,cell44:1.0):0.35,cell29:1.0):0.97,(((((((((cell16:1.0,cell17:1.0):0.13,(cell27:1.0,cell2:1.0):0.15):0.06,cell30:1.0):0.06,cell11:1.0):0.22,((cell14:1.0,cell26:1.0):0.45,cell47:1.0):0.27):0.32,cell48:1.0):0.25,((((cell36:1.0,cell9:1.0):0.34,cell1:1.0):0.1,cell6:1.0):0.08,((cell0:1.0,cell34:1.0):0.46,(cell33:1.0,cell45:1.0):0.62):0.3):0.01):0.0,((((cell10:1.0,cell12:1.0):0.56,cell37:1.0):0.75,cell35:1.0):0.5,cell18:1.0):0.53):0.22,cell7:1.0):1.0):1.0;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add 0.5 to each branch to avoid 0 length.</span>
+<span class="n">tv</span> <span class="o">=</span> <span class="n">TreeViz</span><span class="p">(</span><span class="n">tree_spr_bootstrap</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">branch_length_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mutations</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">confidence_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">branch_confidence</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># tv.show_confidence(bbox=dict(facecolor=&#39;red&#39;, alpha=0.5))</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree_spr_bootstrap</span><span class="o">.</span><span class="n">get_all_nodes</span><span class="p">():</span>
+    <span class="n">leaf_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">leaf</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">leaf</span> <span class="ow">in</span> <span class="n">tree_spr_bootstrap</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">get_leaves</span><span class="p">()]</span>
+    <span class="n">tv</span><span class="o">.</span><span class="n">marker</span><span class="p">(</span><span class="n">leaf_names</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">tree_spr_bootstrap</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">branch_confidence</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">tv</span><span class="o">.</span><span class="n">plotfig</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a6be463a9b1deb6a3408d343583857883fd6f2065443c49563d894e49f2c9832.png" src="../_images/a6be463a9b1deb6a3408d343583857883fd6f2065443c49563d894e49f2c9832.png" />
+</div>
+</div>
+</section>
+<section id="evaluation-metrics">
+<h3>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Link to this heading">#</a></h3>
+<p>Our package provides several metrics to evaluate the results. These include:</p>
+<ul class="simple">
+<li><p>Genotype Accuracy:<br />
+<code class="docutils literal notranslate"><span class="pre">scistree2.metric.genotype_accuracy(true_genotype,</span> <span class="pre">genotype)</span></code></p></li>
+<li><p>Tree Accuracy (defined as 1 minus the normalized Robinson-Foulds distance):<br />
+<code class="docutils literal notranslate"><span class="pre">scistree2.metric.tree_accuracy(true_tree,</span> <span class="pre">tree)</span></code></p></li>
+<li><p>Ancestor-Descendant Error:<br />
+<code class="docutils literal notranslate"><span class="pre">scistree2.metric.ancestor_descendant_error(true_mutation,</span> <span class="pre">mutation)</span></code></p></li>
+<li><p>Different Lineage Error:<br />
+<code class="docutils literal notranslate"><span class="pre">scistree2.metric.different_lineage_error(true_mutaiton,</span> <span class="pre">mutation)</span></code></p></li>
+</ul>
+<p>Usage examples are shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get groundtruth</span>
+<span class="n">true_genotype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data/true_genotype.txt&#39;</span><span class="p">)</span> <span class="c1"># load true genotype provided by CellCoal</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/true_tree.nwk&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
+    <span class="n">true_tree_nwk</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="c1"># load true tree provided by CellCoal</span>
+<span class="n">true_tree</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">from_newick</span><span class="p">(</span><span class="n">true_tree_nwk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of true tree&#39;</span><span class="p">,</span> <span class="n">true_tree</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True genotype&#39;</span><span class="p">,</span> <span class="n">true_genotype</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newick of true tree (((((((((cell14,cell26),cell27),cell11),((cell16,cell47),cell2)),cell17),cell30),((((cell36,cell6),cell7),cell48),cell1)),(((((cell10,cell18),(cell12,cell37)),cell35),cell9),(((cell0,cell34),cell45),cell33))),(((((((cell15,cell29),cell44),cell8),((cell3,cell49),cell28)),(((cell13,cell38),(cell20,cell21)),cell42)),(((((cell23,cell31),cell22),cell41),(cell19,cell25)),(((cell24,cell43),cell39),((cell46,cell5),cell40)))),(cell32,cell4)));
+True genotype (100, 50)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gacc_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">genotype_accuarcy</span><span class="p">(</span><span class="n">true_genotype</span><span class="p">,</span> <span class="n">imputed_genotype_spr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">gacc_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">genotype_accuarcy</span><span class="p">(</span><span class="n">true_genotype</span><span class="p">,</span> <span class="n">imputed_genotype_nni</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">gacc_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">genotype_accuarcy</span><span class="p">(</span><span class="n">true_genotype</span><span class="p">,</span> <span class="n">imputed_genotype_nj</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">tacc_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">tree_accuracy</span><span class="p">(</span><span class="n">true_tree</span><span class="p">,</span> <span class="n">tree_spr</span><span class="p">)</span>
+<span class="n">tacc_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">tree_accuracy</span><span class="p">(</span><span class="n">true_tree</span><span class="p">,</span> <span class="n">tree_nni</span><span class="p">)</span>
+<span class="n">tacc_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">tree_accuracy</span><span class="p">(</span><span class="n">true_tree</span><span class="p">,</span> <span class="n">tree_nj</span><span class="p">)</span>
+
+<span class="n">mutation_true</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">get_ancestor_descendant_pairs</span><span class="p">(</span><span class="n">true_genotype</span><span class="p">)</span>
+<span class="n">mutations_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">get_ancestor_descendant_pairs</span><span class="p">(</span><span class="n">imputed_genotype_spr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">mutations_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">get_ancestor_descendant_pairs</span><span class="p">(</span><span class="n">imputed_genotype_nni</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">mutations_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">get_ancestor_descendant_pairs</span><span class="p">(</span><span class="n">imputed_genotype_nj</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">ad_err_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">ancestor_descendant_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_spr</span><span class="p">)</span>
+<span class="n">ad_err_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">ancestor_descendant_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_nni</span><span class="p">)</span>
+<span class="n">ad_err_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">ancestor_descendant_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_nj</span><span class="p">)</span>
+<span class="n">dl_err_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">different_lineage_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_spr</span><span class="p">)</span>
+<span class="n">dl_err_nni</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">different_lineage_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_nni</span><span class="p">)</span>
+<span class="n">dl_err_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">different_lineage_error</span><span class="p">(</span><span class="n">mutation_true</span><span class="p">,</span> <span class="n">mutations_nj</span><span class="p">)</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Method&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SPR&quot;</span><span class="p">,</span> <span class="s2">&quot;NNI&quot;</span><span class="p">,</span> <span class="s2">&quot;NJ&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Genotype Accuracy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">gacc_spr</span><span class="p">,</span> <span class="n">gacc_nni</span><span class="p">,</span> <span class="n">gacc_nj</span><span class="p">],</span>
+    <span class="s2">&quot;Tree Accuracy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">tacc_spr</span><span class="p">,</span> <span class="n">tacc_nni</span><span class="p">,</span> <span class="n">tacc_nj</span><span class="p">],</span>
+    <span class="s2">&quot;Ancestor-Descendant Error&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">ad_err_spr</span><span class="p">,</span> <span class="n">ad_err_nni</span><span class="p">,</span> <span class="n">ad_err_nj</span><span class="p">],</span>
+    <span class="s2">&quot;Different Lineage Error&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">dl_err_spr</span><span class="p">,</span> <span class="n">dl_err_nni</span><span class="p">,</span> <span class="n">dl_err_nj</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert to DataFrame</span>
+<span class="n">df_metrics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
+<span class="n">df_metrics</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Method</th>
+      <th>Genotype Accuracy</th>
+      <th>Tree Accuracy</th>
+      <th>Ancestor-Descendant Error</th>
+      <th>Different Lineage Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SPR</td>
+      <td>0.9826</td>
+      <td>0.250000</td>
+      <td>0.479858</td>
+      <td>0.023928</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NNI</td>
+      <td>0.9802</td>
+      <td>0.166667</td>
+      <td>0.478591</td>
+      <td>0.024925</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NJ</td>
+      <td>0.9766</td>
+      <td>0.083333</td>
+      <td>0.503420</td>
+      <td>0.024925</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example-iii-from-vcf-file-reads">
+<h3>🧬 <strong>Example III: From VCF File (reads)</strong><a class="headerlink" href="#example-iii-from-vcf-file-reads" title="Link to this heading">#</a></h3>
+<p>In this example, we’ll demonstrate how to start directly from a VCF (Variant Call Format) file. This approach is ideal if you already have a VCF file generated by other software, provided it contains the necessary read count information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vcf_path</span> <span class="o">=</span> <span class="s1">&#39;./data/example.vcf&#39;</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">probability</span><span class="o">.</span><span class="n">from_vcf</span><span class="p">(</span><span class="n">vcf_path</span><span class="p">,</span> <span class="n">ado</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seqerr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">posterior</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">af</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Info: Skipping line because AD not found in FORMAT: CHR[chr1], POS[250]
+          CELL_1  CELL_2  CELL_3  CELL_4  CELL_5
+chr1:100    0.00    0.88    0.00    0.00    0.88
+chr1:150    0.95    0.00    0.50    0.95    0.00
+chr1:200    0.00    0.00    0.77    0.00    0.00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SPR local search</span>
+<span class="n">caller_vcf</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">tree_vcf</span><span class="p">,</span> <span class="n">imputed_genotype_vcf</span><span class="p">,</span> <span class="n">likelihood_vcf</span> <span class="o">=</span> <span class="n">caller_vcf</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imputed genotype from SPR: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">imputed_genotype_vcf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Newick of the SPR tree: &#39;</span><span class="p">,</span> <span class="n">tree_vcf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Likelihood of the NJ tree: &#39;</span><span class="p">,</span> <span class="n">likelihood_vcf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imputed genotype from SPR: 
+           CELL_1  CELL_2  CELL_3  CELL_4  CELL_5
+chr1:100       1       0       1       1       0
+chr1:150       0       1       0       0       1
+chr1:200       1       1       1       1       1
+Newick of the SPR tree:  (((CELL_1,CELL_4),CELL_3),(CELL_2,CELL_5));
+Likelihood of the NJ tree:  -2.50748619740126
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-required-packages"><strong>Importing Required Packages</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-providing-genotype-probability-for-scistree2">Inputs: Providing Genotype Probability for ScisTree2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-direct-probability-specification">Method 1: Direct Probability Specification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-from-read-counts">Method 2: From Read Counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-from-csv-file">Method 1: From CSV File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-from-vcf-file">Method 3: From VCF File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-i-toy-genotype-probability-matrix">🧬<strong>Example I: Toy Genotype Probability Matrix</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-ii-toy-raw-reads-data">🧬 <strong>Example II: Toy Raw Reads Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-metrics">Evaluation Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-iii-from-vcf-file-reads">🧬 <strong>Example III: From VCF File (reads)</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Haotian Zhang, Yufeng Wu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025 LabWu @ University of Connecticut.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
