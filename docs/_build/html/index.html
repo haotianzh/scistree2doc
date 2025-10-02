@@ -401,8 +401,8 @@ document.write(`
 </section>
 <section id="single-cell-dna-seq">
 <h3>Single-cell DNA-seq<a class="headerlink" href="#single-cell-dna-seq" title="Link to this heading">#</a></h3>
-<p>Recent developments in single-cell sequencing have greatly facilitated the inference of cell lineage trees. However, single-cell data are sparse and noisy, and the size of single-cell data is increasing rapidly. Accurate inference of cell lineage tree from large single-cell data is computationally challenging,
-There are multiple types of errors:</p>
+<p>Recent developments in single-cell sequencing have greatly facilitated the inference of cell lineage trees. However, single-cell data are sparse and noisy, and the size of single-cell data is increasing rapidly. Accurate inference of cell lineage tree from noisy single-cell data is computationally challenging,
+There are some common types of errors:</p>
 <ul class="simple">
 <li><p>Allelic dropout</p></li>
 <li><p>Sequencing error</p></li>
@@ -413,17 +413,21 @@ There are multiple types of errors:</p>
 </section>
 <section id="genotype-and-infinite-site-is-model">
 <h3>Genotype and Infinite-Site(IS) model<a class="headerlink" href="#genotype-and-infinite-site-is-model" title="Link to this heading">#</a></h3>
-<p>Once the DNA of individual cells has been sequenced, a process called <strong>variant calling</strong> is used to identify mutation sites. This is done by comparing each cell’s DNA sequence against a reference genome.</p>
+<p>Once the DNA of individual cells has been sequenced, a process called variant calling is used to identify mutation sites. This is done by comparing each cell’s DNA sequence against a reference genome.</p>
 <p><img alt="" src="_images/geno.png" /></p>
-<p>At each identified mutation site, such as a Single Nucleotide Variant (SNV), the cell’s genetic state (allele) is assigned a binary value:</p>
+<p>At each identified mutation site (Single Nucleotide Variant), the cell’s genetic state (allele) is assigned a binary value:</p>
 <ul class="simple">
-<li><p><strong>0 (Wild-Type):</strong> The allele is identical to the reference genome.</p></li>
-<li><p><strong>1 (Mutant):</strong> The allele differs from the reference genome.</p></li>
+<li><p>0 (Wild-Type): The allele is identical to the reference genome.</p></li>
+<li><p>1 (Mutant): The allele differs from the reference genome.</p></li>
 </ul>
-<p>A cell’s overall <strong>genotype</strong> is therefore defined as the set of binary values describing its state across all relevant mutation sites.</p>
-<p>When these acquired mutations are mapped onto the branches of a cell lineage tree, the developmental relationships between cells become clear. This mapping reveals how mutations are passed down and accumulate through generations of cell division. In this context, a <strong>clade</strong> is a group of cells that all share a common set of mutations inherited from a single ancestor.</p>
+<p>A cell’s overall genotype is therefore defined as the set of binary values describing its state across all relevant mutation sites.</p>
+<p>When these acquired mutations are mapped onto the branches of a cell lineage tree, the developmental relationships between cells become clear. This mapping reveals how mutations are passed down and accumulate through generations of cell division. In this context, a clade is a group of cells that all share a common set of mutations inherited from a single ancestor.</p>
 <p><img alt="" src="_images/mutmap.png" /></p>
-<p>A key assumption often used in these analyses is the <strong>Infinite Sites (IS) model</strong>. This model assumes that a mutation at any specific genomic location can occur only once throughout the entire history of the lineage. Consequently, the exact same mutation cannot arise independently in different branches (an event known as homoplasy), nor can a mutant allele revert to the wild-type state. As the figure illustrates, the “repeated blue diamond” appearing on separate lineages would violate the assumptions of the IS model.</p>
+<p>A key assumption often used in these analyses is the Infinite Sites (IS) model. This model assumes that a mutation at any specific genomic location can occur only once throughout the entire history of the lineage. Consequently, the exact same mutation cannot arise independently in different branches (an event known as homoplasy), nor can a mutant allele revert to the wild-type state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As the figure illustrates, the “repeated blue diamond” appearing on separate lineages would violate the assumptions of the IS model, which is not allowed.</p>
+</div>
 </section>
 <section id="what-is-scistree2">
 <h3>What is ScisTree2<a class="headerlink" href="#what-is-scistree2" title="Link to this heading">#</a></h3>
@@ -432,17 +436,17 @@ There are multiple types of errors:</p>
 <p>This figure illustrates an example of noisy genotypes for 5 cells across 4 SNV sites. Each value represents the probability of a site being wild-type (0). After running ScisTree2, a cell lineage tree is inferred, and mutations are mapped onto its branches.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As shown, the genotype at cell <span class="math notranslate nohighlight">\(C_3\)</span> and site <span class="math notranslate nohighlight">\(S_1\)</span> is noisy, it has only a 10% probability of being wild-type (0), but is subsequently corrected to mutant (1) as the inferred tree suggests.</p>
+<p>As shown, the genotype of cell <span class="math notranslate nohighlight">\(C_3\)</span> at site <span class="math notranslate nohighlight">\(S_1\)</span> is noisy, it has only a 10% probability of being wild-type (0), but is very likely to be mutant (1) as the inferred tree indicates. Mutation of <span class="math notranslate nohighlight">\(S_1\)</span> is placed on the branch to the lowest common ancestor of <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, and <span class="math notranslate nohighlight">\(C_3\)</span>, so all of them have 1 at <span class="math notranslate nohighlight">\(S_1\)</span>.</p>
 </div>
 </section>
 <section id="algorithm-overview">
 <h3>Algorithm overview<a class="headerlink" href="#algorithm-overview" title="Link to this heading">#</a></h3>
-<p>Local search:</p>
-<ul class="simple">
+<p>ScisTree2 uses a heurastic way to find the optimal tree:</p>
+<ol class="arabic simple">
 <li><p>start from an initial tree (say built by neighbor joining)</p></li>
-<li><p>move to the best neighboring tree (with highest probability) of current tree by rearranging the current tree by NNI or SPR</p></li>
+<li><p>move to the best neighboring tree (with highest probability) of current tree by rearranging the current tree by NNI* or SPR*</p></li>
 <li><p>repeated util converge</p></li>
-</ul>
+</ol>
 <p>Nearest neighbor interchange  (NNI): swap adjacent branches
 <img alt="Nearest neighbor interchange" src="_images/nni.png" /></p>
 <p>Subtree prune and regraft (SPR): move a subtree to another (possible very far) location.
