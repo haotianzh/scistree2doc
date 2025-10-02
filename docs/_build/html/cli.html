@@ -404,13 +404,14 @@ Elapsed time = 0 seconds.
 </pre></div>
 </div>
 <p>Explanations:</p>
-<ul>
+<ul class="simple">
 <li><p>You should specifiy the cell names in the first row. For example, “c1 c2 c3 c4 c5”. Please note that don’t use <strong>HAPLOID</strong> or <strong>HAPLOTYPES</strong> as cell names. These two words are reserved keywords in ScisTree2.</p></li>
-<li><p>The following row starts with the row identifier, then the probability of the five cells being zero (wild-type). For example, the second row says for the first site, the probability of the first cell (cell 1) has probability 0.01 being the wild type, the second cell has probability 0.6 being the wild type, and so on.</p>
-<p><strong>Be careful: the rows are for the SNV sites and the columns are for the cells. Don’t get this wrong.</strong></p>
-</li>
+<li><p>The following row starts with the row identifier, then the probability of the five cells being zero (wild-type). For example, the second row says for the first site, the probability of the first cell (cell 1) has probability 0.01 being the wild type, the second cell has probability 0.6 being the wild type, and so on.</p></li>
 </ul>
-<p>ScisTree2 is essentially a faster and also somewhat more accurate ScisTree. Some features from the original ScisTree (version 1) are not supported in the current implementaiton of ScisTree2. These include: (i) ternary data input: ScisTree2 only supports binary data as of now; (ii) parameter imputation and doublet imputation. I haven’t got chance to upgrade these features. For the moment, ScisTree2 is dedicated for cell lineage tree inference.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful: the rows are for the SNV sites and the columns are for the cells. Don’t get this wrong.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

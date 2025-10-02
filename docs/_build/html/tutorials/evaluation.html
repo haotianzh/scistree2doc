@@ -384,7 +384,7 @@ document.write(`
 <code class="docutils literal notranslate"><span class="pre">scistree2.metric.different_lineage_error(true_mutaiton,</span> <span class="pre">mutation)</span></code></p></li>
 </ul>
 <p>Usage examples are shown below:</p>
-<p>Load the prepared dataset and run inference using SPR, NNI, and NJ repectively.</p>
+<p>Load the prepared dataset and run inference using SPR, NNI, and NJ respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scistree2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">s2</span>
@@ -403,6 +403,18 @@ document.write(`
 <span class="c1"># NJ</span>
 <span class="n">caller_nj</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">ScisTree2</span><span class="p">(</span><span class="n">nj</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">tree_nj</span><span class="p">,</span> <span class="n">imputed_genotype_nj</span><span class="p">,</span> <span class="n">likelihood_nj</span> <span class="o">=</span> <span class="n">caller_nj</span><span class="o">.</span><span class="n">infer</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scistree2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">s2</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scistree2&#39;
 </pre></div>
 </div>
 </div>
@@ -427,7 +439,7 @@ True genotype (100, 50)
 </div>
 </div>
 </div>
-<p>Evaluate the genotype accuracy.</p>
+<p>Evaluate the genotype accuracy (MAPE between imputed genotype and the ground truth).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gacc_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">genotype_accuarcy</span><span class="p">(</span><span class="n">true_genotype</span><span class="p">,</span> <span class="n">imputed_genotype_spr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
@@ -437,7 +449,7 @@ True genotype (100, 50)
 </div>
 </div>
 </div>
-<p>Evaluate the tree accuracy using <span class="math notranslate nohighlight">\(1 - RF(t_1, t_2)\)</span>, we use Robinson-Foulds distance here.</p>
+<p>Evaluate the tree accuracy using <span class="math notranslate nohighlight">\(1 - RF_{norm}(t_1, t_2)\)</span>, we use normalized Robinson-Foulds distance here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tacc_spr</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">tree_accuracy</span><span class="p">(</span><span class="n">true_tree</span><span class="p">,</span> <span class="n">tree_spr</span><span class="p">)</span>
@@ -471,7 +483,7 @@ True genotype (100, 50)
 </div>
 </div>
 </div>
-<p>Check the results. It is clear to see SPR local search usually has better performance.</p>
+<p>Check the results. It is clear to see SPR local search usually performs better.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>

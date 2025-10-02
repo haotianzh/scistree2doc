@@ -388,7 +388,7 @@ document.write(`
 <p>ScisTree2 works with genotype probability data, which it accepts as a <code class="docutils literal notranslate"><span class="pre">GenotypeProbability</span></code> object. You have several convenient methods to construct this essential object, each catering to different input data formats.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All data and files can be found in GitHub repo</p>
+<p>All data and files can be found at <a class="reference external" href="https://github.com/yufengwudcs/ScisTree2/tree/python/tutorials/data">GitHub</a></p>
 </div>
 <section id="method-1-probability-matrix">
 <h2>Method 1: Probability Matrix<a class="headerlink" href="#method-1-probability-matrix" title="Link to this heading">#</a></h2>
@@ -425,13 +425,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      cell1  cell2  cell3  cell4  cell5
-snp1   0.01   0.60   0.08   0.80   0.70
-snp2   0.80   0.02   0.70   0.01   0.30
-snp3   0.02   0.80   0.02   0.80   0.90
-snp4   0.90   0.90   0.80   0.80   0.02
-snp5   0.01   0.80   0.01   0.80   0.90
-snp6   0.05   0.02   0.70   0.05   0.90
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">scistree2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">s2</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                  <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                  <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                  <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                  <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                  <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]])</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scistree2&#39;
 </pre></div>
 </div>
 </div>
@@ -534,10 +540,10 @@ snp6   0.05   0.02   0.70   0.05   0.90
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">reads</span></code></strong>: A three-dimensional NumPy array containing the read counts for each cell at each site.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">ado</span></code></strong>: The Allele Dropout (ADO) rate, which accounts for the probability of an allele not being detected in a cell.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">seqerr</span></code></strong>: The sequencing error rate, representing the probability of a base being incorrectly called during sequencing.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">posterior</span></code></strong>: If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, ScisTree2 will use <code class="docutils literal notranslate"><span class="pre">af</span></code> to calculate the posterior genotype probability. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">af</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">posterior</span></code></strong>: If set to True, ScisTree2 will use <code class="docutils literal notranslate"><span class="pre">af</span></code> to calculate the posterior genotype probability. If False, <code class="docutils literal notranslate"><span class="pre">af</span></code> defaults to <span class="math notranslate nohighlight">\(0.5\)</span>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">af</span></code></strong>: The allele frequency.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_names</span></code> (Optional)</strong>: A list of names for your cells. If you don’t provide this, cells will be automatically named <code class="docutils literal notranslate"><span class="pre">c1</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">cN</span></code>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">site_names</span></code> (Optional)</strong>: A list of names for your genomic sites. If not provided, sites will be named <code class="docutils literal notranslate"><span class="pre">s1</span></code>, <code class="docutils literal notranslate"><span class="pre">s2</span></code>, up to <code class="docutils literal notranslate"><span class="pre">sN</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cell_names</span></code> (Optional)</strong>: A list of names for your cells. If you don’t provide this, cells will be automatically named <span class="math notranslate nohighlight">\(c_1\)</span>, <span class="math notranslate nohighlight">\(c_2\)</span>, up to <span class="math notranslate nohighlight">\(c_N\)</span>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">site_names</span></code> (Optional)</strong>: A list of names for your genomic sites. If not provided, sites will be named <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, up to <span class="math notranslate nohighlight">\(s_N\)</span>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -545,13 +551,19 @@ snp6   0.05   0.02   0.70   0.05   0.90
 </div>
 <p>In this dataset, the input format remains a matrix of shape <code class="docutils literal notranslate"><span class="pre">(num_sites,</span> <span class="pre">num_cells)</span></code>.<br />
 However, instead of using <strong>precomputed genotype probabilities</strong>, <strong>each entry is a tuple</strong> representing raw sequencing read counts.</p>
-<p>*if the read counts are unknown, just use (0, 0).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if the read counts are unknown (missing), just use (0, 0).</p>
+</div>
 <p>Each tuple has the form: <code class="docutils literal notranslate"><span class="pre">(ref_count,</span> <span class="pre">alt_count)</span></code>, where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ref_count</span></code> is the number of reads supporting the <strong>reference (wild type)</strong> allele</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alt_count</span></code> is the number of reads supporting the <strong>mutation (alternative)</strong> allele</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>This format is suitable when you start from <strong>raw read counts</strong> rather than inferred genotype probabilities, enabling ScisTree2 to perform <strong>probabilistic genotype modeling</strong> internally before tree inference.</p>
+</div>
 <p>This dataset, located in the <code class="docutils literal notranslate"><span class="pre">data</span></code> folder, contains <strong>50 cells</strong> and <strong>100 SNPs</strong>.<br />
 It was generated using <a class="reference external" href="https://github.com/dapogon/cellcoal">CellCoal</a> with the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cellcoal-1.2.0<span class="w"> </span>-n5<span class="w"> </span>-s10<span class="w"> </span>-l100<span class="w"> </span>-e1000<span class="w"> </span>-b1<span class="w"> </span>-j30<span class="w"> </span>-p0<span class="w"> </span>-D0.5<span class="w"> </span>-B0<span class="w"> </span><span class="m">0</span>.01<span class="w"> </span>-C5<span class="w"> </span>-E0<span class="w"> </span>-otoys<span class="w"> </span>-y3<span class="w"> </span>-v<span class="w"> </span>-1<span class="w"> </span>-2<span class="w"> </span>-6<span class="w"> </span>-7<span class="w"> </span>-9<span class="w"> </span>-Y
@@ -648,7 +660,7 @@ It was generated using <a class="reference external" href="https://github.com/da
 </ul>
 <p>When <code class="docutils literal notranslate"><span class="pre">posterior=True</span></code> (default), the posterior probability <span class="math notranslate nohighlight">\(p(G \mid D)\)</span> is calculated given the allele frequency <code class="docutils literal notranslate"><span class="pre">af</span></code>.<br />
 The parameter <code class="docutils literal notranslate"><span class="pre">af</span></code> should be a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> with shape (num_sites, 1).</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">af</span></code> is not provided or set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will be automatically estimated from the current samples.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">af</span></code> is not provided or set to None, it will be automatically estimated from the current samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one can generate the input directly from a reads matrix.</span>
