@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ScisTree2 &#8212; ScisTree2 Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="ScisTree2 Book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="ScisTree2 Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    About
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation/installation-py.html">Install for Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/installation-c.html">Install for C++ (optional)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tutorials/usage.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/input.html">Prepare your own data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/branch_length.html">Map mutations on branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/bootstrap.html">Get branch support using bootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/evaluation.html">Evaluate the inferred tree</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CLI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Using ScisTree2 in C++</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Release Notes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/yufengwudcs/ScisTree2" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ScisTree2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-tools">Required Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-scistree2-in-python">Using ScisTree2 in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-scistree2-in-c">Using ScisTree2 in C++</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-format-of-scistree2-in-c">Data format of ScisTree2 in C++?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-new-about-scistree2-over-scistree">What is new about ScisTree2 over ScisTree?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability">Data Availability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contact">Contact</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="scistree2">
+<h1>ScisTree2<a class="headerlink" href="#scistree2" title="Link to this heading">#</a></h1>
+<p align="center">
+    <img src="img/logo.png" alt="ScisTree2 Logo" width="600" style="max-width:90%;height:auto;">
+</p>
+<h2 align="center">Fast cell lineage tree reconstruction and genotype calling for large single cell DNA sequencing data </h2>
+<!-- ## Introduction -->
+<p>Software accompanyment for <strong>“ScisTree2 enables large-scale inference of cell lineage trees and genotype calling using efficient local search”</strong>, Haotian Zhang, Yiming Zhang, Teng Gao and Yufeng Wu, Genome Research, in press, 2025 (https://genome.cshlp.org/content/early/2025/09/03/gr.280542.125.abstract). Here is the preprint in a slightly different title <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2024.11.08.622704v1"><em>Large-scale Inference of Cell Lineage Trees and Genotype Calling from Noisy Single-Cell Data Using Efficient Local Search</em>, Haotian Zhang, Yiming Zhang, Teng Gao and Yufeng Wu, manuscript, 2025</a> (under the title <em>“ScisTree2: An Improved Method for Large-scale Inference of Cell Lineage Trees and Genotype Calling from Noisy Single Cell Data”</em>, presented in the RECOMB 2025 conference).</p>
+<p>This is an enhanced version of ScisTree (<em>Accurate and efficient cell lineage tree inference from noisy single cell data: the maximum likelihood perfect phylogeny approach, Bioinformatics, Wu, Volume 36, Issue 3, Pages 742–750, 2020</em>).</p>
+<section id="required-tools">
+<h2>Required Tools<a class="headerlink" href="#required-tools" title="Link to this heading">#</a></h2>
+<p>To use ScisTree2, you will need the following tools and libraries installed:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">python</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">pip</span></code></strong>: Version 3.6 or higher.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">g++</span></code></strong>: A C++ compiler.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">make</span></code></strong>: For building the backend.</p></li>
+</ul>
+<p>*<em>We have successfully tested it on Linux, macOS, and Windows (via WSL).</em></p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Clone the repository:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yufengwudcs/ScisTree2.git
+<span class="nb">cd</span><span class="w"> </span>scistree2
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install the Python package (includes C++ backend compilation):</strong>
+You can install the <code class="docutils literal notranslate"><span class="pre">scistree2</span></code> package using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This command will also automatically compile the C++ backend. Once built, the executable binary file can be found in <code class="docutils literal notranslate"><span class="pre">scistree2/bin</span></code>.</p>
+<p>*<em>We recommend that users create a virtual environment using either <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code> to comply with <a class="reference external" href="https://peps.python.org/pep-0668/">PEP 668</a>.</em></p>
+<!-- Alternatively, you can use `python setup.py install`:
+```bash
+python setup.py install
+```
+The `setup.py` script is configured to first build the C++ executable (similar to running `make` in the `src` directory) and then include it in the Python package. -->
+</li>
+<li><p><strong>(Optional) Manual C++ backend build (for testing/development):</strong>
+If you want to build or test the C++ backend (<code class="docutils literal notranslate"><span class="pre">scistree</span></code>) independently, you can navigate to the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory and compile it using <code class="docutils literal notranslate"><span class="pre">make</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>src
+make
+<span class="c1"># You can then test it directly, e.g., ./scistree example_input.txt</span>
+</pre></div>
+</div>
+<p>This step is not required for the Python package installation if using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> as described above. See more details below.</p>
+</li>
+</ol>
+</section>
+<section id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h2>
+<p>ScisTree2 offers both Python and C++ interfaces. We recommend using the Python version because it provides a wider variety of supported input formats and evaluation tools, and it is more easily integrated into the broader Python ecosystem.</p>
+<section id="using-scistree2-in-python">
+<h3>Using ScisTree2 in Python<a class="headerlink" href="#using-scistree2-in-python" title="Link to this heading">#</a></h3>
+<p>A detailed tutorial on how to use ScisTree2 in Python is available as a Jupyter Notebook in the <code class="docutils literal notranslate"><span class="pre">tutorials/</span></code> directory:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="tutorials/ScisTree2_Tutorial.html"><span class="std std-doc">ScisTree2 Tutorial</span></a></strong></p></li>
+</ul>
+<p>The tutorial covers:</p>
+<ul class="simple">
+<li><p>Getting started with ScisTree2.</p></li>
+<li><p>Running inference with probabilistic genotype matrices (CSV supported).</p></li>
+<li><p>Running inference with raw read data (CSV supported).</p></li>
+<li><p>Running inference with VCF file.</p></li>
+<li><p>Visualizing trees.</p></li>
+<li><p>Evaluating results using various metrics.</p></li>
+<li><p><strong>Bootstrapping</strong> for branch (clade) confidence estimates (added September 27, 2025).</p></li>
+</ul>
+<p>The example data used in the tutorial can be found in the <code class="docutils literal notranslate"><span class="pre">tutorials/data/</span></code> directory.</p>
+</section>
+<section id="using-scistree2-in-c">
+<h3>Using ScisTree2 in C++<a class="headerlink" href="#using-scistree2-in-c" title="Link to this heading">#</a></h3>
+<p>To run ScisTree2 directly from the console, please refer to step 3 in the <a class="reference internal" href="#installation"><span class="xref myst">installation</span></a> guide above.</p>
+<p>The executable is called <code class="docutils literal notranslate"><span class="pre">scistree</span></code>.
+Check if ScisTree2 is ready to run by typing: <code class="docutils literal notranslate"><span class="pre">./scistree</span></code>, you should see some output about the basic usage of ScisTree2.</p>
+<p>Now type:
+<code class="docutils literal notranslate"><span class="pre">./scistree</span> <span class="pre">example_input.txt</span></code>, you should see the following output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>*** SCISTREE ver. 2.2.3.0, August 14, 2025 ***
+
+#cells: 5, #sites: 6
+List of cell names: c1 c2 c3 c4 c5 
+Called genotypes output to file: example_input.txt.genos.imp
+**** Maximum log-likelihood: -6.27126, number of changed genotypes: 2
+Computed log-lielihood from changed genotypes: -6.27126
+Constructed single cell phylogeny: (((c1,c3),(c2,c4)),c5)
+Elapsed time = 0 seconds.
+</pre></div>
+</div>
+<p><strong>Options:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-e</span></code>: Output a mutation tree (which may not be a binary tree) with branch labels from the called genotypes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-e0</span></code>: Output a mutation tree without branch labels, which is useful for visualizing large trees.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-q</span></code>: Use NNI (Nearest Neighbor Interchange) for local tree search. NNI is faster but less accurate. By default, ScisTree2 uses SPR (Subtree Pruning and Regrafting) local search, which we have found to be very fast.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-T</span> <span class="pre">&lt;num-of-threads&gt;</span></code>: Specify the number of threads for multi-threading support.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">&lt;num-of-iterations&gt;</span></code>: Set the maximum number of iterations to control the running time. A smaller number (e.g., 5) will reduce the running time but may also reduce accuracy. Default: 1,000 iterations.</p></li>
+</ul>
+<p>You may also read the ScisTree2’s User Manual, which is in PDF format and is distributed as part of ScisTree2.</p>
+<section id="data-format-of-scistree2-in-c">
+<h4>Data format of ScisTree2 in C++?<a class="headerlink" href="#data-format-of-scistree2-in-c" title="Link to this heading">#</a></h4>
+<p>First, you should understand some basics about ScisTree2. I would recommend to read the <a class="reference external" href="https://github.com/yufengwudcs/ScisTree/blob/master/ScisTree-UserManual.pdf">user mannual</a> of the orgianl ScisTree.</p>
+<p>The first thing to use ScisTree2 is to prepare the input. Here is the content of an example(example_input.txt):</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">c1</span><span class="w"> </span><span class="nx">c2</span><span class="w"> </span><span class="nx">c3</span><span class="w"> </span><span class="nx">c4</span><span class="w"> </span><span class="nx">c5</span>
+<span class="nx">s1</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.7</span>
+<span class="nx">s2</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="mf">0.3</span>
+<span class="nx">s3</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.9</span>
+<span class="nx">s4</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mf">0.9</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.02</span>
+<span class="nx">s5</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.9</span>
+<span class="nx">s6</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.9</span>
+</pre></div>
+</div>
+<p>Explanations:</p>
+<ul>
+<li><p>You should specifiy the cell names in the first row. For example, “c1 c2 c3 c4 c5”. Please note that don’t use <strong>HAPLOID</strong> or <strong>HAPLOTYPES</strong> as cell names. These two words are reserved keywords in ScisTree2.</p></li>
+<li><p>The following row starts with the row identifier, then the probability of the five cells being zero (wild-type). For example, the second row says for the first site, the probability of the first cell (cell 1) has probability 0.01 being the wild type, the second cell has probability 0.6 being the wild type, and so on.</p>
+<p><strong>Be careful: the rows are for the SNV sites and the columns are for the cells. Don’t get this wrong.</strong></p>
+</li>
+</ul>
+<p>ScisTree2 is essentially a faster and also somewhat more accurate ScisTree. Some features from the original ScisTree (version 1) are not supported in the current implementaiton of ScisTree2. These include: (i) ternary data input: ScisTree2 only supports binary data as of now; (ii) parameter imputation and doublet imputation. I haven’t got chance to upgrade these features. For the moment, ScisTree2 is dedicated for cell lineage tree inference.</p>
+</section>
+</section>
+</section>
+<section id="what-is-new-about-scistree2-over-scistree">
+<h2>What is new about ScisTree2 over ScisTree?<a class="headerlink" href="#what-is-new-about-scistree2-over-scistree" title="Link to this heading">#</a></h2>
+<p>The main change is about speed and accuracy. ScisTree2 is order of mangnitude faster than ScisTree. ScisTree2 supports multi-threading while ScisTree doesn’t. More importantly, ScisTree2 implements faster and also possibly more accurate tree search algorithms. By default, ScisTree2 performs the subtree prune and regraft (SPR) local search, while ScisTree performs neareast neighbor interchange (NNI) search. The SPR local search is usually more accurate than the NNI search. Our tests show that ScisTree2 can infer cell lineage tree from data with 10,000 cells (and say 10,000 single nucleiotide variant or SNV sites) while being more accurate in both cell lineage tree and genotype calling.</p>
+</section>
+<section id="data-availability">
+<h2>Data Availability<a class="headerlink" href="#data-availability" title="Link to this heading">#</a></h2>
+<p>All simulated data, experimental data(HGSOC), and scripts used to reproduce the results in the SicsTree2 paper are released at Zenodo.
+<a class="reference external" href="https://zenodo.org/records/15620911"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.15620911.svg" /></a></p>
+</section>
+<section id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Link to this heading">#</a></h2>
+<p>Post your issues here inside GitHub repositary if you have questions/issues.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-tools">Required Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">Tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-scistree2-in-python">Using ScisTree2 in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-scistree2-in-c">Using ScisTree2 in C++</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-format-of-scistree2-in-c">Data format of ScisTree2 in C++?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-new-about-scistree2-over-scistree">What is new about ScisTree2 over ScisTree?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability">Data Availability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contact">Contact</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Haotian Zhang, Yufeng Wu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025 LabWu @ University of Connecticut.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
