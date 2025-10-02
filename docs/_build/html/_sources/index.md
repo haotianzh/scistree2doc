@@ -40,10 +40,14 @@ A key assumption often used in these analyses is the **Infinite Sites (IS) model
 
 
 #### What is ScisTree2
-ScisTree2 is a fast and accurate cell lineage tree inference and genotype calling approach based on the infinite-sites model. ScisTree2 relies on an efficient local search approach to find optimal trees. ScisTree2 also calls single-cell genotypes based on the inferred cell lineage tree. ScisTree2 is the first model-based cell lineage tree inference and genotype calling approach that is capable of handling datasets from tens of thousands of cells or more.
+ScisTree2 is a fast and accurate method for cell lineage tree inference and genotype calling based on the infinite-sites model. Since genotypes called from single-cell DNA sequencing data are often noisy and inaccurate, ScisTree2 begins with this noisy input and infers the most likely cell lineage tree while simultaneously correcting the genotypes. It employs an efficient local search algorithm to identify optimal tree structures. Notably, ScisTree2 is the first model-based approach capable of handling datasets containing tens of thousands of cells or more, making it highly scalable for large-scale single-cell analyses.
 
 ![ScisTree2 infers a cell lineage tree from noisy genotype](imgs/g2t.png)
 
+This figure illustrates an example of noisy genotypes for 5 cells across 4 SNV sites. Each value represents the probability of a site being wild-type (0). After running ScisTree2, a cell lineage tree is inferred, and mutations are mapped onto its branches. 
+```{note}
+As shown, the genotype at cell $C_3$ and site $S_1$ is noisy, it has only a 10% probability of being wild-type (0), but is subsequently corrected to mutant (1) as the inferred tree suggests.
+```
 #### Algorithm overview
 Local search: 
 - start from an initial tree (say built by neighbor joining)
