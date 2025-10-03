@@ -9,7 +9,7 @@ repository:
 html:
   use_repository_button: true
   analytics:
-    google_analytics_id: G-ZMQYP3Z5X1
+    google_analytics_id: "G-ZMQYP3Z5X1"
 
 
 copyright: "2025 LabWu @ University of Connecticut"
